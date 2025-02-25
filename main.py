@@ -7,7 +7,7 @@ from resume import ResumeSkillExtractor
 import requests
      
 def create_streamlit_app(llm,resumee):
-    st.title("🔍 Job Scanner")
+    #st.title("🔍 Job Scanner") i changed here
     descriptions_input = st.text_area("Enter the Requirements:", value="")
     uploaded_file = st.file_uploader("Upload your resume/document", type=["pdf", "docx", "txt"])
     submit_button = st.button("Submit")
