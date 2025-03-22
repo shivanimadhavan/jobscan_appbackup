@@ -5,10 +5,12 @@ from chain import Chain
 from resume import ResumeSkillExtractor 
 #from utils import clean_text
 import requests
+
+#hello this is shivani i have some updates
      
 def create_streamlit_app(llm,resumee):
     #st.title("🔍 Job Scanner") i changed here
-    descriptions_input = st.text_area("Enter the Requirements:", value="")
+    descriptions_input = st.text_area("say a+b=5", value="")
     uploaded_file = st.file_uploader("Upload your resume/document", type=["pdf", "docx", "txt"])
     submit_button = st.button("Submit")
     
@@ -25,15 +27,7 @@ def create_streamlit_app(llm,resumee):
             ats_score=chain.find_ATS_score(description_loader, resume_loader)
             st.write("ATS Score",ats_score, "%")
             st.write("### Skills Missing from Your Resume:")
-            # for i, skill in enumerate(missing_skills):
-            #     st.button(skill, key=f"missing_skill_{i}")  # Add a unique key
-            #    print("error1")    
-            #    if st.button(skill):  # Make each skill clickable
-            #        try:                       
-            #           st.write(f"### Generated Sentences for the Skill: {skill}")
-            #           sentences=llm.generate_sentences(skill)
-            #           for sentence in sentences:
-            #              st.markdown(f"- {sentence}")
+          
         except Exception as e:
            st.error(f"An Error Occurred: {e}")
            
